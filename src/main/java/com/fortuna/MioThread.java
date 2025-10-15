@@ -44,16 +44,18 @@ public class MioThread extends Thread {
                     break;
                 }
                 listaNum = Integer.parseInt(lista);
-                if (liste.size() <= listaNum) {
+                if (liste.size() < listaNum) {
                     out.println("KO");
                 } else {
                     out.println("OK");
                     int giocatore = Integer.parseInt(in.readLine());
-                    if (liste.get(listaNum).size() <= giocatore) {
+                    if (liste.get(listaNum - 1).size() < giocatore) {
                         out.println("KO");
+                        System.out.println("log");
                     } else {
                         out.println("OK");
-                        out.println(liste.get(listaNum).get(giocatore));
+                        System.out.println("Ciao");
+                        out.println(liste.get(listaNum - 1).get(giocatore - 1));
                     }
                 }
             } while (true);
